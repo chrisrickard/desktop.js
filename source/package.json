@@ -1,0 +1,13 @@
+{
+  "name": "Example",
+  "main": "index.html",
+  "window": {
+  	"name": "example",
+  	"title": "Example",
+    "position": "center",
+    "width": 700,
+    "height": 500,
+    "toolbar": true,
+    "show": false
+  }
+}

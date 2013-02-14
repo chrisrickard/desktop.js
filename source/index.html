@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    width: 700px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #system_info, #process_output {
+    width: 500px;
+    height: 300px;
+    font-family: 'Monaco';
+    font-size: 12px;
+    color: white;
+    background-color: #383535;
+  }
+
+  #system_info {
+    font-size: 16px;
+  }
+
+  #logo {
+    border-radius: 280px;
+    height: 250px;
+    margin-left: 55px;
+  }
+
+  #tab1 button {
+    margin-top: 20px;
+    margin-left: 45px;
+  }
+
+  </style>
+
+  <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
+</head>
+<body class='container'>
+
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">My node-webkit example...</a>
+    </div>
+  </div>
+
+  <div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#tab1" data-toggle="tab">Some buttons</a></li>
+      <li><a href="#tab2" data-toggle="tab">System info</a></li>
+      <li><a href="#tab3" data-toggle="tab">External process</a></li>
+      <li><a href="#tab4" data-toggle="tab">Video feed</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab1">
+        <h3>Welcome, now press buttons...</h3>
+        <img src="img/logo.png" id="logo" />
+        <br/><br/>
+        <button class="btn btn-primary btn-large" onclick="app.show_file()">Show file...</button>
+        <button class="btn btn-primary btn-large" onclick="app.open_file()">Choose directory...</button>
+      </div>
+      <div class="tab-pane" id="tab2">
+        <h3>System information</h3>
+        <textarea id="system_info"></textarea>
+      </div>
+      <div class="tab-pane" id="tab3">
+        <h3>External process communication</h3>
+        <button class='btn btn-primary' onclick="app.begin_external()">Launch...</button>
+        <br />
+        <textarea id="process_output"></textarea>
+      </div>
+      <div class="tab-pane" id="tab4">
+         <h3>WebRTC example</h3>
+         <video id="video_feed" width="500" height="300" autoplay></video>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="script/bootstrap.min.js"></script>
+  <script type="text/javascript" src="script/app.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      setTimeout(function() { app.init(); } , 100);
+    });
+  </script>
+</body>
+</html>
